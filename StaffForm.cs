@@ -16,6 +16,8 @@ namespace BS2020proj
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(StaffForm_FormClosed);
+
+            dvgLibraryCollection.DataSource = Database.LibraryCollection;
         }
 
         private void StaffForm_FormClosed(object sender, FormClosedEventArgs e)

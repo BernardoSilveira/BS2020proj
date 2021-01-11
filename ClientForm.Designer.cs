@@ -73,6 +73,7 @@ namespace BS2020proj
             this.dvgLibraryCollection.Location = new System.Drawing.Point(473, 22);
             this.dvgLibraryCollection.Name = "dvgLibraryCollection";
             this.dvgLibraryCollection.ReadOnly = true;
+            this.dvgLibraryCollection.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dvgLibraryCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgLibraryCollection.Size = new System.Drawing.Size(292, 395);
             this.dvgLibraryCollection.TabIndex = 2;
@@ -86,6 +87,7 @@ namespace BS2020proj
             this.dvgReservedBooks.Location = new System.Drawing.Point(30, 81);
             this.dvgReservedBooks.Name = "dvgReservedBooks";
             this.dvgReservedBooks.ReadOnly = true;
+            this.dvgReservedBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dvgReservedBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgReservedBooks.Size = new System.Drawing.Size(344, 154);
             this.dvgReservedBooks.TabIndex = 3;
@@ -99,6 +101,7 @@ namespace BS2020proj
             this.dvgRentedBooks.Location = new System.Drawing.Point(30, 270);
             this.dvgRentedBooks.Name = "dvgRentedBooks";
             this.dvgRentedBooks.ReadOnly = true;
+            this.dvgRentedBooks.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.dvgRentedBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgRentedBooks.Size = new System.Drawing.Size(344, 146);
             this.dvgRentedBooks.TabIndex = 4;
@@ -111,6 +114,7 @@ namespace BS2020proj
             this.btnReserve.TabIndex = 5;
             this.btnReserve.Text = "Reserve";
             this.btnReserve.UseVisualStyleBackColor = true;
+            this.btnReserve.Click += new System.EventHandler(this.btnReserve_Click);
             // 
             // btnRent
             // 
@@ -120,6 +124,7 @@ namespace BS2020proj
             this.btnRent.TabIndex = 6;
             this.btnRent.Text = "Rent";
             this.btnRent.UseVisualStyleBackColor = true;
+            this.btnRent.Click += new System.EventHandler(this.btnRent_Click);
             // 
             // label2
             // 

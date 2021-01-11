@@ -10,7 +10,7 @@ namespace BS2020proj
     public enum Positions { Manager, ClientService, Trainee}
 
     [Serializable()]
-    public abstract class User
+    public class User
     {
         protected User(string name, string surname, string address, DateTime birthdate)
         {
@@ -24,9 +24,9 @@ namespace BS2020proj
         public string Surname { get; set; }
         public string Address { get; set; }
         public DateTime Birthdate { get; set; }
+
         public BindingList<Book> ReservedBooks { get; private set; } = new BindingList<Book>();
         public BindingList<Book> RentedBooks { get; private set; } = new BindingList<Book>();
-
     }
 
     [Serializable()]
@@ -44,10 +44,11 @@ namespace BS2020proj
     [Serializable()]
     public class Client : User
     {
-        public Client(string name, string surname, string address, DateTime birthdate)
+        public Client(string name, string surname, string address, DateTime birthdate, bool pickupready = false)
             : base(name, surname, address, birthdate)
         {
+            PickupReady = pickupready;
         }
-
+        public bool PickupReady { get; set; }
     }
 }
