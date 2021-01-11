@@ -45,8 +45,8 @@ namespace BS2020proj
             ToggleButtons();
         }
 
-        private int IndClient { get; set; }
-        private List<int> DatabaseIndexes { get; set; }
+        private int IndClient { get; set; } // Index of the List of clients waiting for pick-up.
+        private List<int> DatabaseIndexes { get; set; } //Index of the Clients on the main database.
         private void btnRent_Click(object sender, EventArgs e)
         {
             Database.Rent(Database.Users[DatabaseIndexes[IndClient]], dvgReservedBooks.CurrentRow.DataBoundItem);
