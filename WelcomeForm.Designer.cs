@@ -30,7 +30,7 @@ namespace BS2020proj
         private void InitializeComponent()
         {
             this.btnLogin = new System.Windows.Forms.Button();
-            this.comboLogin = new System.Windows.Forms.ComboBox();
+            this.cmbLogin = new System.Windows.Forms.ComboBox();
             this.labelWelcome = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -44,13 +44,13 @@ namespace BS2020proj
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
-            // comboLogin
+            // cmbLogin
             // 
-            this.comboLogin.FormattingEnabled = true;
-            this.comboLogin.Location = new System.Drawing.Point(210, 180);
-            this.comboLogin.Name = "comboLogin";
-            this.comboLogin.Size = new System.Drawing.Size(351, 21);
-            this.comboLogin.TabIndex = 1;
+            this.cmbLogin.FormattingEnabled = true;
+            this.cmbLogin.Location = new System.Drawing.Point(210, 180);
+            this.cmbLogin.Name = "cmbLogin";
+            this.cmbLogin.Size = new System.Drawing.Size(351, 21);
+            this.cmbLogin.TabIndex = 1;
             // 
             // labelWelcome
             // 
@@ -68,7 +68,7 @@ namespace BS2020proj
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.labelWelcome);
-            this.Controls.Add(this.comboLogin);
+            this.Controls.Add(this.cmbLogin);
             this.Controls.Add(this.btnLogin);
             this.Name = "WelcomeForm";
             this.Text = "Welcome";
@@ -81,7 +81,7 @@ namespace BS2020proj
         #endregion
 
         private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.ComboBox comboLogin;
+        private System.Windows.Forms.ComboBox cmbLogin;
         private System.Windows.Forms.Label labelWelcome;
     }
 }

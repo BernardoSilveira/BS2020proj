@@ -15,15 +15,17 @@ namespace BS2020proj
         static Database()
         {
             DateTime date1 = new DateTime(1982, 08, 12);
-            User u = new Client("Client", "Cliento", "Brambova 45", date1, true);
-            Users.Add(u);
+            User u1 = new Client("Client", "Cliento", "Brambova 45", date1, true);
+            Users.Add(u1);
             Users.Add(new Staff("Staff", "Staffo", "Brambova 45", date1, Positions.Manager));
-            Users.Add(new Client("John", "Adams", "Nasdrova 32", date1));
+            User u2 = new Client("John", "Adams", "Nasdrova 32", date1, true);
+            Users.Add(u2);
             Users.Add(new Client("David", "Destro", "Olova 65", date1));
             Users.Add(new Staff("Maria", "Staffova", "Brambova 45", date1, Positions.ClientService));
             Users.Add(new Client("Marc", "David", "Bluova 90", date1));
-            u.ReservedBooks.Add(new Book("The Shinning6", "Stephen King", "Horror"));
-            u.RentedBooks.Add(new Book("The Shinning7", "Stephen King", "Horror"));
+            u1.ReservedBooks.Add(new Book("The Shinning6", "Stephen King", "Horror"));
+            u1.RentedBooks.Add(new Book("The Shinning7", "Stephen King", "Horror"));
+            u2.ReservedBooks.Add(new Book("The Shinning8", "Stephen King", "Horror"));
 
             LibraryCollection.Add(new Book("The Shinning", "Stephen King", "Horror"));
             LibraryCollection.Add(new Book("The Shinning1", "Stephen King", "Horror"));
@@ -36,11 +38,24 @@ namespace BS2020proj
         public static BindingList<User> FindClientInWait()
         {
             BindingList<User> result =  new BindingList<User>();
-            foreach ( User user in Users)
-            {
-                if(user is Client && (user as Client).PickupReady)
+            for (int i = 0; i < Users.Count; i++) 
+            { 
+                if(Users[i] is Client && (Users[i] as Client).PickupReady)
                 {
-                    result.Add(user);
+                    result.Add(Users[i]);
+                }
+            }
+            return result;
+        }
+
+        public static List<int> FindClientInWaitIndex()
+        {
+            List<int> result = new List<int>();
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (Users[i] is Client && (Users[i] as Client).PickupReady)
+                {
+                    result.Add(i);
                 }
             }
             return result;

@@ -19,13 +19,13 @@ namespace BS2020proj
 
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
-            comboLogin.Items.Add("Client"); //The default client for example purposes will be the client with name "Client Cliento"
-            comboLogin.Items.Add("Staff Member"); //The Default staff member for exemple purposes will be "Staff Staffo"
+            cmbLogin.Items.Add("Client"); //The default client for example purposes will be the client with name "Client Cliento"
+            cmbLogin.Items.Add("Staff Member"); //The Default staff member for exemple purposes will be "Staff Staffo"
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            int indUser = comboLogin.SelectedIndex; //simulating login
+            int indUser = cmbLogin.SelectedIndex; //simulating login
             switch (indUser)
             {
                 case 0:
