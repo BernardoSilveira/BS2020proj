@@ -28,8 +28,8 @@ namespace BS2020proj
 
         private void StaffForm_Load(object sender, EventArgs e)
         {
-            BindingList<User> WaitList = Database.FindClientInWait();
-            DatabaseIndexes = Database.FindClientInWaitIndex();
+            BindingList<User> WaitList = Database.FindClientInWait(Database.Users);
+            DatabaseIndexes = Database.FindClientInWaitIndex(Database.Users);
             foreach (var user in WaitList)
             {
                 string FullName = user.Name + " " + user.Surname;

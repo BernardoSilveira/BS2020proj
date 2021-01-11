@@ -25,39 +25,39 @@ namespace BS2020proj
             Users.Add(new Client("David", "Destro", "Olova 65", date1));
             Users.Add(new Staff("Maria", "Staffova", "Brambova 45", date1, Positions.ClientService));
             Users.Add(new Client("Marc", "David", "Bluova 90", date1));
-            u1.ReservedBooks.Add(new Book("The Shinning6", "Stephen King", "Horror"));
-            u1.RentedBooks.Add(new Book("The Shinning7", "Stephen King", "Horror"));
-            u2.ReservedBooks.Add(new Book("The Shinning8", "Stephen King", "Horror"));
+            u1.ReservedBooks.Add(new Book("Book6", "Author6", "Genre4"));
+            u1.RentedBooks.Add(new Book("Book7", "Author7", "Genre5"));
+            u2.ReservedBooks.Add(new Book("Book8", "Author8", "Genre6"));
 
-            LibraryCollection.Add(new Book("The Shinning", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning1", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning2", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning3", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning4", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning5", "Stephen King", "Horror"));*/
+            LibraryCollection.Add(new Book("Book", "Author", "Genre"));
+            LibraryCollection.Add(new Book("Book1", "Author1", "Genre1"));
+            LibraryCollection.Add(new Book("Book2", "Author2", "Genre2"));
+            LibraryCollection.Add(new Book("Book3", "Author3", "Genre2"));
+            LibraryCollection.Add(new Book("Book4", "Author4", "Genre3"));
+            LibraryCollection.Add(new Book("Book5", "Author5", "Genre1"));*/
 
             Deserialize();
         }
 
-        public static BindingList<User> FindClientInWait()
+        public static BindingList<User> FindClientInWait(BindingList<User> list)
         {
             BindingList<User> result =  new BindingList<User>();
-            for (int i = 0; i < Users.Count; i++) 
+            for (int i = 0; i < list.Count; i++) 
             { 
-                if(Users[i] is Client && (Users[i] as Client).PickupReady)
+                if(list[i] is Client && (list[i] as Client).PickupReady)
                 {
-                    result.Add(Users[i]);
+                    result.Add(list[i]);
                 }
             }
             return result;
         }
 
-        public static List<int> FindClientInWaitIndex()
+        public static List<int> FindClientInWaitIndex(BindingList<User> list)
         {
             List<int> result = new List<int>();
-            for (int i = 0; i < Users.Count; i++)
+            for (int i = 0; i < list.Count; i++)
             {
-                if (Users[i] is Client && (Users[i] as Client).PickupReady)
+                if (list[i] is Client && (list[i] as Client).PickupReady)
                 {
                     result.Add(i);
                 }
