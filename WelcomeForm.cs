@@ -21,7 +21,7 @@ namespace BS2020proj
         {
             comboLogin.Items.Add("Client"); //The default client for example purposes will be the client with name "User User"
             comboLogin.Items.Add("Staff Member");
-            comboLogin.Items.Add("Manager");
+            //comboLogin.Items.Add("Manager");
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -33,12 +33,12 @@ namespace BS2020proj
                     newClientForm.Show();
                     this.Hide();
                     break;
-                /*case 1:
+                case 1:
+                    StaffForm newStaffForm = new StaffForm();
+                    newStaffForm.Show();
                     this.Hide();
-                    ClientForm newClientForm = new ClientForm();
-                    newClientForm.Show();
                     break;
-                case 2:
+               /* case 2:
                     this.Hide();
                     ClientForm newClientForm = new ClientForm();
                     newClientForm.Show();
