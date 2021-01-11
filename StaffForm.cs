@@ -34,6 +34,7 @@ namespace BS2020proj
                 string FullName = user.Name + " " + user.Surname;
                 cmbClient.Items.Add(FullName);
             }
+            ToggleButtons();
         }
 
         private void btnLoad_Click(object sender, EventArgs e)
@@ -41,6 +42,7 @@ namespace BS2020proj
             IndClient = cmbClient.SelectedIndex;
             dvgReservedBooks.DataSource = Database.Users[DatabaseIndexes[IndClient]].ReservedBooks;
             dvgRentedBooks.DataSource = Database.Users[DatabaseIndexes[IndClient]].RentedBooks;
+            ToggleButtons();
         }
 
         private int IndClient { get; set; }
@@ -48,14 +50,21 @@ namespace BS2020proj
         private void btnRent_Click(object sender, EventArgs e)
         {
             Database.Rent(Database.Users[DatabaseIndexes[IndClient]], dvgReservedBooks.CurrentRow.DataBoundItem);
-            if(dvgReservedBooks.Rows.Count < 1)
-            {
-                (Database.Users[DatabaseIndexes[IndClient]] as Client).PickupReady = false;
-                btnRent.Enabled = false;
-            } else
-            {
-                btnRent.Enabled = true;
-            }
+            (Database.Users[DatabaseIndexes[IndClient]] as Client).PickupReady = (dvgReservedBooks.Rows.Count > 0);
+            ToggleButtons();
+        }
+
+        private void btnReturn_Click(object sender, EventArgs e)
+        {
+            Database.Return(Database.Users[DatabaseIndexes[IndClient]], dvgRentedBooks.CurrentRow.DataBoundItem);
+            btnReturn.Enabled = (dvgRentedBooks.Rows.Count > 0);
+            ToggleButtons();
+        }
+
+        private void ToggleButtons()
+        {
+            btnReturn.Enabled = (dvgRentedBooks.Rows.Count > 0);
+            btnRent.Enabled = (dvgReservedBooks.Rows.Count > 0);
         }
     }
 }
