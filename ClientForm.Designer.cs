@@ -73,22 +73,33 @@ namespace BS2020proj
             this.dvgLibraryCollection.Location = new System.Drawing.Point(473, 22);
             this.dvgLibraryCollection.Name = "dvgLibraryCollection";
             this.dvgLibraryCollection.ReadOnly = true;
+            this.dvgLibraryCollection.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgLibraryCollection.Size = new System.Drawing.Size(292, 395);
             this.dvgLibraryCollection.TabIndex = 2;
             // 
             // dvgReservedBooks
             // 
+            this.dvgReservedBooks.AllowUserToAddRows = false;
+            this.dvgReservedBooks.AllowUserToDeleteRows = false;
+            this.dvgReservedBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dvgReservedBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgReservedBooks.Location = new System.Drawing.Point(30, 81);
             this.dvgReservedBooks.Name = "dvgReservedBooks";
+            this.dvgReservedBooks.ReadOnly = true;
+            this.dvgReservedBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgReservedBooks.Size = new System.Drawing.Size(344, 154);
             this.dvgReservedBooks.TabIndex = 3;
             // 
             // dvgRentedBooks
             // 
+            this.dvgRentedBooks.AllowUserToAddRows = false;
+            this.dvgRentedBooks.AllowUserToDeleteRows = false;
+            this.dvgRentedBooks.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dvgRentedBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dvgRentedBooks.Location = new System.Drawing.Point(30, 270);
             this.dvgRentedBooks.Name = "dvgRentedBooks";
+            this.dvgRentedBooks.ReadOnly = true;
+            this.dvgRentedBooks.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dvgRentedBooks.Size = new System.Drawing.Size(344, 146);
             this.dvgRentedBooks.TabIndex = 4;
             // 

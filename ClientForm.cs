@@ -21,6 +21,8 @@ namespace BS2020proj
             clientLabel.Text = clientFullName;
 
             dvgLibraryCollection.DataSource = Database.LibraryCollection;
+            dvgReservedBooks.DataSource = Database.Users[indclient].ReservedBooks;
+            dvgRentedBooks.DataSource = Database.Users[indclient].RentedBooks;
         }
         private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
         {

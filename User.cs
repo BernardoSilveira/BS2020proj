@@ -24,6 +24,9 @@ namespace BS2020proj
         public string Surname { get; set; }
         public string Address { get; set; }
         public DateTime Birthdate { get; set; }
+        public BindingList<Book> ReservedBooks { get; private set; } = new BindingList<Book>();
+        public BindingList<Book> RentedBooks { get; private set; } = new BindingList<Book>();
+
     }
 
     [Serializable()]
@@ -46,7 +49,5 @@ namespace BS2020proj
         {
         }
 
-        public BindingList<Book> ReservedBooks { get; private set; } = new BindingList<Book>();
-        public BindingList<Book> RentedBooks { get; private set; } = new BindingList<Book>();
     }
 }
