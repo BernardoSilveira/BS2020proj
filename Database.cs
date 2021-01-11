@@ -15,7 +15,11 @@ namespace BS2020proj
         static Database()
         {
             DateTime date1 = new DateTime(1982, 08, 12);
+            Users.Add(new Client("Client", "Cliento", "Brambova 45", date1));
+            Users.Add(new Staff("Staff", "Staffo", "Brambova 45", date1, Positions.Manager));
             Users.Add(new Client("John", "Adams", "Nasdrova 32", date1));
+            Users.Add(new Client("David", "Destro", "Olova 65", date1));
+            Users.Add(new Staff("Maria", "Staffova", "Brambova 45", date1, Positions.ClientService));
         }
     }
 }

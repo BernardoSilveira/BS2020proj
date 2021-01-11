@@ -12,15 +12,19 @@ namespace BS2020proj
 {
     public partial class ClientForm : Form
     {
-        public ClientForm()
+        public ClientForm(int indclient)
         {
             InitializeComponent();
             this.FormClosed += new FormClosedEventHandler(ClientForm_FormClosed);
+
+            string clientFullName = Database.Users[indclient].Name + " " + Database.Users[indclient].Surname;
+            clientLabel.Text = clientFullName;
+
+            dvgLibraryCollection.DataSource = Database.LibraryCollection;
         }
         private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
         {
             Application.Exit();
         }
-
     }
 }

@@ -19,17 +19,17 @@ namespace BS2020proj
 
         private void WelcomeForm_Load(object sender, EventArgs e)
         {
-            comboLogin.Items.Add("Client"); //The default client for example purposes will be the client with name "User User"
-            comboLogin.Items.Add("Staff Member");
-            //comboLogin.Items.Add("Manager");
+            comboLogin.Items.Add("Client"); //The default client for example purposes will be the client with name "Client Cliento"
+            comboLogin.Items.Add("Staff Member"); //The Default staff member for exemple purposes will be "Staff Staffo"
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnLogin_Click(object sender, EventArgs e)
         {
-            switch (comboLogin.SelectedIndex)
+            int indUser = comboLogin.SelectedIndex; //simulating login
+            switch (indUser)
             {
                 case 0:
-                    ClientForm newClientForm = new ClientForm();
+                    ClientForm newClientForm = new ClientForm(indUser);
                     newClientForm.Show();
                     this.Hide();
                     break;
@@ -38,11 +38,6 @@ namespace BS2020proj
                     newStaffForm.Show();
                     this.Hide();
                     break;
-               /* case 2:
-                    this.Hide();
-                    ClientForm newClientForm = new ClientForm();
-                    newClientForm.Show();
-                    break;*/
             }
         }
     }
