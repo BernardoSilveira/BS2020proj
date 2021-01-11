@@ -28,6 +28,7 @@ namespace BS2020proj
         }
         private void ClientForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Database.Serialize();
             Application.Exit();
         }
 

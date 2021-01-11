@@ -1,9 +1,11 @@
 ﻿using System;
+using System.IO;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization.Formatters.Binary;
 
 namespace BS2020proj
 {
@@ -14,7 +16,7 @@ namespace BS2020proj
 
         static Database()
         {
-            DateTime date1 = new DateTime(1982, 08, 12);
+            /*DateTime date1 = new DateTime(1982, 08, 12);
             User u1 = new Client("Client", "Cliento", "Brambova 45", date1, true);
             Users.Add(u1);
             Users.Add(new Staff("Staff", "Staffo", "Brambova 45", date1, Positions.Manager));
@@ -32,7 +34,9 @@ namespace BS2020proj
             LibraryCollection.Add(new Book("The Shinning2", "Stephen King", "Horror"));
             LibraryCollection.Add(new Book("The Shinning3", "Stephen King", "Horror"));
             LibraryCollection.Add(new Book("The Shinning4", "Stephen King", "Horror"));
-            LibraryCollection.Add(new Book("The Shinning5", "Stephen King", "Horror"));
+            LibraryCollection.Add(new Book("The Shinning5", "Stephen King", "Horror"));*/
+
+            Deserialize();
         }
 
         public static BindingList<User> FindClientInWait()
@@ -86,6 +90,36 @@ namespace BS2020proj
 
             LibraryCollection.Add(book);
             client.RentedBooks.Remove(book);
+        }
+
+        public static void Serialize()
+        {
+            Serialize(Users, "users.bin");
+            Serialize(LibraryCollection, "librarycollection.bin");
+        }
+
+        public static void Serialize<T>(BindingList<T> list, string file)
+        {
+            using (Stream s = File.Open(file, FileMode.Create))
+            {
+                BinaryFormatter b = new BinaryFormatter();
+                b.Serialize(s, list);
+            }
+        }
+
+        public static void Deserialize()
+        {
+            Users = Deserialize<User>("users.bin");
+            LibraryCollection = Deserialize<Book>("librarycollection.bin");
+        }
+
+        public static BindingList<T> Deserialize<T>(string file)
+        {
+            using (Stream s = File.Open(file, FileMode.Open))
+            {
+                BinaryFormatter b = new BinaryFormatter();
+                return (BindingList<T>)b.Deserialize(s);
+            }
         }
     }
 }

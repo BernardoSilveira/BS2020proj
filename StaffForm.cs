@@ -22,6 +22,7 @@ namespace BS2020proj
 
         private void StaffForm_FormClosed(object sender, FormClosedEventArgs e)
         {
+            Database.Serialize();
             Application.Exit();
         }
 
